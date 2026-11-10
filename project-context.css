@@ -22,8 +22,50 @@
   margin: 14px 0 0;
   padding-left: 18px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.7;
+}
+
+.case-nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px 24px;
+  margin-bottom: 24px;
+}
+
+.case-nav a {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  color: var(--accent);
+  line-height: 1.4;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.flow-art {
+  min-height: 0;
+}
+
+.case-flow {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 20px;
+  padding-left: 1.4em;
+  font-size: .95rem;
+}
+
+.case-flow li {
+  padding: 8px 10px;
+  background: var(--paper);
+}
+
+.case-flow strong,
+.case-flow span {
+  display: block;
+}
+
+.case-flow span {
+  color: var(--muted);
 }
 
 .project-details li + li {
@@ -50,7 +92,8 @@
 }
 
 .venture-process {
-  padding-top: 34px;
+  padding: 22px;
+  background: #e6e9dc;
   color: var(--muted);
 }
 
@@ -270,6 +313,61 @@
 }
 
 @media (max-width: 640px) {
+  .masthead {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .masthead nav {
+    max-width: none;
+    justify-content: flex-start;
+    column-gap: 15px;
+    font-size: .875rem;
+  }
+
+  .masthead nav a:last-child {
+    display: inline;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-statement {
+    display: contents;
+  }
+
+  .hero-statement h1 {
+    margin: 28px 0 18px;
+    font-size: clamp(2.35rem, 9.5vw, 3.65rem);
+  }
+
+  .hero-illustration {
+    order: 2;
+    align-self: flex-end;
+    width: min(62vw, 270px);
+    margin-top: 24px;
+  }
+
+  .hero .explore {
+    align-self: flex-start;
+    order: 1;
+    margin-top: 20px;
+  }
+
+  .hero-note {
+    display: none;
+  }
+
+  .case-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
+    gap: 6px 16px;
+    padding-top: 0;
+    font-size: .875rem;
+  }
+
   .featured-venture {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -277,7 +375,7 @@
   }
 
   .venture-process {
-    padding-top: 0;
+    padding: 18px;
   }
 
   .contact-actions {
